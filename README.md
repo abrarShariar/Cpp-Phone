@@ -1,6 +1,7 @@
 # [Cpp-Phone](http://abrarshariar.github.io/Cpp-Phone/)
 A console based Software which have different features of a Phone.  Entirely coded in C++. The Graphical inteface is built on SFML. 
 
+Before running the software please read the [Documentation] (http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 
 Cpp-Phone
 ------------------------
@@ -13,7 +14,7 @@ This is a console based Phone software. The entire software is written in C++. F
 
 	-Code
 	
-	-Documentation
+	-[Documentation](http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 	
 	-SFML
 	
@@ -54,11 +55,11 @@ In order to use the C++Phone you must compile the main.cpp file included in the 
 
 NOTE: You must read the followings (included in documentation) properly before compiling the software:
 
-	1) How to set up SFML
+	1) [How to set up SFML] (http://abrarshariar.github.io/cpp_phone_documentation/howtoSFML.html)
 	
-	2) How to run the sofware 
+	2) [How to run the sofware] (http://abrarshariar.github.io/cpp_phone_documentation/howtorun.html)
 	
-	3) How it works
+	3) [How it works](http://abrarshariar.github.io/cpp_phone_documentation/howitworks.html)
 	
 
 
