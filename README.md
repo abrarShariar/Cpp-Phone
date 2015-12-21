@@ -55,11 +55,11 @@ In order to use the C++Phone you must compile the main.cpp file included in the 
 
 NOTE: You must read the followings (included in documentation) properly before compiling the software:
 
-	1) [How to set up SFML] (http://abrarshariar.github.io/cpp_phone_documentation/howtoSFML.html)
+[How to set up SFML] (http://abrarshariar.github.io/cpp_phone_documentation/howtoSFML.html)
+ 
+[How to run the sofware] (http://abrarshariar.github.io/cpp_phone_documentation/howtorun.html)
 	
-	2) [How to run the sofware] (http://abrarshariar.github.io/cpp_phone_documentation/howtorun.html)
-	
-	3) [How it works](http://abrarshariar.github.io/cpp_phone_documentation/howitworks.html)
+[How it works](http://abrarshariar.github.io/cpp_phone_documentation/howitworks.html)
 	
 
 
