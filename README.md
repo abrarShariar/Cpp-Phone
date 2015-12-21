@@ -1,5 +1,5 @@
 # [Cpp-Phone](http://abrarshariar.github.io/Cpp-Phone/)
-A console based Software which have different features of a Phone.  Entirely coded in C++. The Graphical inteface is built on SFML. 
+A console based Software which demostrates different features of a Phone.  Entirely coded in C++. The Graphical inteface is built on SFML. 
 
 Before running the software please read the [Documentation] (http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 
