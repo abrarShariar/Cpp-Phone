@@ -12,11 +12,11 @@ This is a console based Phone software. The entire software is written in C++. F
 
 -C++Phone
 
-	-Code
+Code
 	
-	-[Documentation](http://abrarshariar.github.io/cpp_phone_documentation/)
+[Documentation](http://abrarshariar.github.io/cpp_phone_documentation/)
 	
-	-SFML
+SFML
 	
 
 In the "Code" subfolder the following header files are found:
