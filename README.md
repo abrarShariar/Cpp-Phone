@@ -21,27 +21,27 @@ This is a console based Phone software. The entire software is written in C++. F
 
 In the "Code" subfolder the following header files are found:
 
--Calculator.h
+-[Calculator.h] (http://abrarshariar.github.io/cpp_phone_documentation/calculator.html)
 
--error.h
+-[error.h] 
 
--Methods.h
+-[Methods.h] (http://abrarshariar.github.io/cpp_phone_documentation/methods.html)
 
--Options.h
+-[Options.h] (http://abrarshariar.github.io/cpp_phone_documentation/options.html)
 
--Person.h
+-[Person.h] (http://abrarshariar.github.io/cpp_phone_documentation/person.html)
 
--Phone.h
+-[Phone.h] (http://abrarshariar.github.io/cpp_phone_documentation/phone.html)
 
--PhoneBook.h
+-[PhoneBook.h] (http://abrarshariar.github.io/cpp_phone_documentation/phonebook.html)
 
--PhoneCall.h
+-[PhoneCall.h] (http://abrarshariar.github.io/cpp_phone_documentation/phonecall.html)
 
--RegisterPerson.h
+-[RegisterPerson.h] (http://abrarshariar.github.io/cpp_phone_documentation/registerPerson.html)
 
--SFML.h
+-[SFML.h] (http://abrarshariar.github.io/cpp_phone_documentation/sfml.html)
 
--SMS.h
+-[SMS.h] (http://abrarshariar.github.io/cpp_phone_documentation/sms.html)
 
 
 Besides C++ Standard Library is extensively used. For more on each files please see the documentation.
