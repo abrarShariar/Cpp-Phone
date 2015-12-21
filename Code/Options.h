@@ -5,6 +5,7 @@
 #include "SFML.h"
 #include "error.h"
 #include "Calculator.h"
+#include "Dice.h"
 
 Phone activePhone;
 Person alphaPerson;
@@ -19,6 +20,7 @@ void viewPersonDetails();
 void registerPerson();
 void useContactsApp();
 void useCalculatorApp();
+void useGameApp();
 //select from pre-registered person
 Person selectPerson(){
     vector<Person>personList;
@@ -169,6 +171,15 @@ void chooseApp(){
     else if(appName=="Calculator" || appName=="calculator" || appName=="cal"){
         useCalculatorApp();
     }
+    else if(appName=="games" || appName=="game" || appName=="Games" || appName=="Games"){
+        useGameApp();
+    }
+}
+
+void useGameApp(){
+    system("cls");
+    playDice();
+
 }
 
 void useCalculatorApp(){
