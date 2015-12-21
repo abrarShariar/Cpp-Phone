@@ -23,7 +23,7 @@ In the "Code" subfolder the following header files are found:
 
 -[Calculator.h] (http://abrarshariar.github.io/cpp_phone_documentation/calculator.html)
 
--[error.h] 
+-[error.h] (http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 
 -[Methods.h] (http://abrarshariar.github.io/cpp_phone_documentation/methods.html)
 
