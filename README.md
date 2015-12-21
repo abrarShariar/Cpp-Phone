@@ -14,7 +14,7 @@ This is a console based Phone software. The entire software is written in C++. F
 
 	-Code
 	
-	-[Documentation](http://abrarshariar.github.io/cpp_phone_documentation/index.html)
+	-[Documentation](http://abrarshariar.github.io/cpp_phone_documentation/)
 	
 	-SFML
 	
@@ -45,7 +45,7 @@ In the "Code" subfolder the following header files are found:
 
 
 Besides C++ Standard Library is extensively used. For more on each files please see the documentation.
-The "Documentation" folder containes all the necessary doc files in .html format
+The [Documentation](http://abrarshariar.github.io/cpp_phone_documentation/)  containes all the necessary doc files in .html format
 The "SFML" folder contains the SFML library (version 2.1)
 
 
