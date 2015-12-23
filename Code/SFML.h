@@ -152,6 +152,24 @@ void showPhoneScreen(){
     googleText.setCharacterSize(15);
     googleText.setPosition(330,160);
 
+
+
+    //Texture (Dice)
+    sf::Texture  diceIcon;
+    diceIcon.loadFromFile("image/dice.png");
+    //RectangleShape (Dice)
+    sf::RectangleShape recDice;
+    recDice.setSize(sf::Vector2f(43,43));
+    recDice.setOutlineColor(sf::Color::Black);
+    recDice.setOutlineThickness(2);
+    recDice.setPosition(60,200);
+    recDice.setTexture(&diceIcon);
+    //Text
+    sf::Text diceText("Games",font);
+    diceText.setCharacterSize(15);
+    diceText.setPosition(60,240);
+
+
     //texture (Qwerty)
     sf::Texture qwerty;
     qwerty.loadFromFile("image/qwerty.png");
@@ -195,6 +213,8 @@ sf::RenderWindow window(sf::VideoMode(400,600), "C++ Phone");
         window.draw(recFb);
         window.draw(fbText);
         window.draw(recGoogle);
+        window.draw(recDice);
+        window.draw(diceText);
         window.draw(googleText);
         window.draw(rectangle);
         window.display();
