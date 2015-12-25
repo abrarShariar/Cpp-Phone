@@ -2,9 +2,12 @@
     This file contains all the functionalities which are accessible by the Main Controller
     See main function
 */
-#include "SFML.h"
 #include "error.h"
 #include "Calculator.h"
+#include "Dice.h"
+#include "Methods.h"
+#include<dirent.h>
+
 
 Phone activePhone;
 Person alphaPerson;
@@ -19,6 +22,11 @@ void viewPersonDetails();
 void registerPerson();
 void useContactsApp();
 void useCalculatorApp();
+void useGameApp();
+
+//SFML function
+void showPhoneScreen();
+
 //select from pre-registered person
 Person selectPerson(){
     vector<Person>personList;
@@ -65,7 +73,6 @@ void selectPhone(Person activePerson){
         }while(errorPhoneCount(phoneCount));
         ss<<phoneCount;
         ss>>pCount;
-
 
         printf("\n");
         for(int i=0;i<pCount;i++){
@@ -129,8 +136,7 @@ bool processMenu(string option){
             }catch(exception exp){
                 cout<<"\nUnable to display Phone Screen\n"<<endl;
             }
-
-            chooseApp();
+            //chooseApp();
             break;
         case 3:
             viewPersonDetails();
@@ -169,11 +175,21 @@ void chooseApp(){
     else if(appName=="Calculator" || appName=="calculator" || appName=="cal"){
         useCalculatorApp();
     }
+    else if(appName=="games" || appName=="game" || appName=="Games" || appName=="Games"){
+        useGameApp();
+    }
+}
+
+void useGameApp(){
+    system("cls");
+    playDice();
+
 }
 
 void useCalculatorApp(){
     double ans=0;
     string opr;
+    cout<<"\n\n";
     showCalculator();
     cout<<"\n\n";
     cout<<"\t\tOperator: ";
@@ -265,6 +281,7 @@ void useContactsApp(){
 
 //access the features of SMS
 void useTextApp(){
+    cout<<"\n\n";
     SMS::setTextLimit(200);
     SMS::setTextRate(0.2);
     bool exit=false;
@@ -276,7 +293,7 @@ void useTextApp(){
 
         if(opt=="+"){
             string num;
-            cout<<"\tEnter recipient : ";
+            cout<<"\n\tEnter recipient : ";
             getline(cin,num);
             if(validPhoneNumber(num)){
                 string text;
@@ -286,13 +303,12 @@ void useTextApp(){
                     cout<<"\nCaution: Word Limit Exceeded\n\n";
                     continue;
                 }
-
                 activePhone.newSMS(num,text);
                 cout<<"Sending ";
                 loading();
-                cout<<"\a Message Successfully Sent !! \n"<<endl;
+                cout<<"\n\a\tMessage Successfully Sent !! \n"<<endl;
             }else{
-                 cout<<"INVALID PHONE NUMBER\n"<<endl;
+                 cout<<"\tINVALID PHONE NUMBER\n"<<endl;
                     continue;
             }
         }else if(opt=="x" || opt=="X"){
@@ -311,7 +327,6 @@ void useTextApp(){
             }
         alphaPerson.phoneBox.push_back(activePhone);
 }
-
 
 //access all features of Phone
 void usePhoneApp(){
@@ -350,8 +365,44 @@ void usePhoneApp(){
             }
         alphaPerson.phoneBox.push_back(activePhone);
 }
-
 //access all the features of Contacts/ PhoneBook
+
+//access the music app
+void useMusicApp(){
+    map<int,string>musicMap;
+
+    cout<<"\n\n";
+    cout<<"\t\t[My Playlist]\n\n";
+
+    //Code for displaying
+     const char *location="E:\\2nd_semester\\C++\\C++Phone\\Code\\music";
+
+    DIR *dir;
+    struct dirent *ent;
+    if ((dir = opendir (location)) != NULL) {
+    /* print all the files and directories within directory */
+    int index=1;
+    int i=0;
+    while ((ent = readdir (dir)) != NULL) {
+        if(i!=0 && i!=1){
+            printf ("\t\t[%d] %s\n",index,ent->d_name);
+            musicMap[index]=ent->d_name;
+            index++;
+        }
+        i++;
+    }
+    closedir (dir);
+    } else {
+    /* could not open directory */
+    perror ("");
+    }
+    //take input from user
+    int in;
+    cout<<"\n\n Choose Music to Play [index] : ";
+    cin>>in;
+    string name=musicMap[in];
+    playMusic(name);
+}
 
 //view details of a Person
 void viewPersonDetails(){

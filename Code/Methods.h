@@ -11,8 +11,15 @@
 #include<fstream>
 #include<limits>
 #include<cstdio>
-//#include "SFML.h"
+#include<ctime>
+#include "SFML.cpp"
+
 using namespace std;
+
+//SFML function declaration
+void showPhoneScreen();
+void playMusic(string name);
+
 /*
     Write/Read entire PhoneBook entry passed by vector<PhoneBook> into
     the specified fileName
@@ -193,6 +200,7 @@ void loading(){
     }
 }
 
+/*
 string showDate(){
         time_t now=time(0);
         tm *ptm=localtime(&now);
@@ -230,6 +238,8 @@ string showTime(){
        string startTime=h+":"+m+":"+s;
         return startTime;
 }
+*/
+
 
 // SEE RegisterPerson.h
 void preRegister(){
@@ -254,7 +264,7 @@ void preRegister(){
 //Functions to handle MENU activities
 string arrOption[]={"[+S]","[+R]","[+P]","[+D]","[X]","[#]"};
 void displayMenu(){
-    string arrText[]={"Select Person","Register Person","Use C++ Phone","View Details","EXIT","View Main Controller"};
+    string arrText[]={"Select Person","Register Person","Use C++ Phone","View Details","EXIT","View Main Controller/ Refresh"};
     char icon=219;
     //HEAD
      for(int i=0;i<30;i++){
@@ -323,15 +333,12 @@ string chooseMenu(){
     }
 }
 
-
 void wait(){
     for(int i=0;i<40;i++){
         for(int j=0;j<7000000;j++){
         }
     }
 }
-
-
 
 void showCalculator(){
  //first row
@@ -347,4 +354,8 @@ void showCalculator(){
     cout<<"\t\t"<<"cubic root"<<"\t"<<"power"<<"\t\t"<<"ln"<<"\t\t"<<"exp"<<endl;
     cout<<endl;
 }
+
+
+//call to showPhoneScreen() in SFML.h
+
 
