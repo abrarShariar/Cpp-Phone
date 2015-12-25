@@ -3,6 +3,8 @@ A console based Software which demostrates different features of a Phone.  Entir
 
 **How to run the software** : Open the subfolder Code, Run *main.exe* and PLAY !!
 
+In case of using the **Music** app please make sure you have added all your music files (.wav / .ogg format) in the music subfolder under Code directory
+
 Before running the software please read the [Documentation] (http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 
 Cpp-Phone
