@@ -37,11 +37,24 @@
         <h4> <a href="index.html">C++ Phone Documentation</a></h4>
         </div>
 </nav>
+<div style="float: right;">
+  This project is maintained by <a href="https://github.com/abrarShariar">abrarShariar</a><br>
+  <a href="https://github.com/abrarShariar/Cpp-Phone">View On Github</a>
+
+  <br>
+  </div>
 
   <!-- main body -->
   <div class="container">
     <div class="col-md-3">
     <!-- Left column for index of content -->
+      <div class="list-group"><br>
+
+        <button type="button" class="list-group-item"><a href="howtoSFML.html">How to set up SFML </a></button>
+        <button type="button" class="list-group-item"><a href="howtorun.html">How to run the software </a></button>
+                <button type="button" class="list-group-item"><a href="howitworks.html">How it works </a></button>
+
+        </div><br>
 
 
             <div class="list-group"><br><br>
@@ -54,8 +67,11 @@
   <button type="button" class="list-group-item"><a href="sms.html">SMS.h</a></button>
   <button type="button" class="list-group-item"><a href="methods.html">Methods.h</a></button>
   <button type="button" class="list-group-item"><a href="options.html">Options.h</a></button>
-  <button type="button" class="list-group-item"><a href="sfml.html">SFML.h</a></button>
+  <button type="button" class="list-group-item"><a href="sfml.html">SFML.cpp</a></button>
   <button type="button" class="list-group-item"><a href="calculator.html">Calculator.h</a></button>
+  <button type="button" class="list-group-item"><a href="dice.html">Dice.h</a></button>
+   <button type="button" class="list-group-item"><a href="app.html">App.h</a></button>
+
             </div><br>
 
 
@@ -92,9 +108,9 @@
     </div>
 <div class="col-md-9">
       <!-- <div class="col-md-9"> -->
-      <h1><i>&nbsp&nbspSFML.h </i></h1>
-            <p>This header file defines all the neccessary functions and features of SFML (Simple Fast Multimedia Library) <br>
-             <strong>Note: </strong> Before using any features of this header file , please read <a href="howtoSFML.html">How to set up SFML</a>.
+      <h1><i>&nbsp&nbspSFML.cpp </i></h1>
+            <p>This file defines all the neccessary functions and features of SFML (Simple Fast Multimedia Library) <br>
+             <strong>Note: </strong> Before using any features of this  file , please read <a href="howtoSFML.html">How to set up SFML</a>.
              <br>
              <br><a href="http://www.sfml-dev.org/learn.php">Read SFML Documentation</a> </p>
             <hr><br>
@@ -113,26 +129,97 @@
  
 <p>- SFML header files are include as follows: <br>
   <br><code>#include< SFML/Graphics.hpp></code><br>
-<code>#include< SFML/Window.hpp></code>
+<code>#include< SFML/Window.hpp></code><br>
+<code>#include< SFML/Audio.hpp></code><br>
 </p><br>
 
     <p>- SFML members are not include in the <code>std namespace</code> so we have to use <code>sf namespace</code> for using SFML elements .</p>
 
     <br>
+    <h3>Code</h3><br>
          
       <div id="code">
           <!-- CODE -->
           <pre>
-
 /*
     This file contains the features of SFML that is used for the graphical interface
 
-    NOTE: Sohan Chowdhury [15-30269-2] contributed in learning SFML
+    NOTE: Sohan Chowdury [15-30269-2] contributed in learning SFML
 */
 
-#include< SFML/Graphics.hpp>
 #include< SFML/Window.hpp>
-#include "Methods.h"
+#include< SFML/Graphics.hpp>
+#include< SFML/Audio.hpp>
+#include "App.h"
+
+string showDate();
+string showTime();
+
+void playMusic(string name){
+   sf::RenderWindow window(sf::VideoMode(250, 350), " MUSIC ");
+
+ //Texture (Music Play icon)
+    sf::Texture playIcon;
+    playIcon.loadFromFile("image/musicPlay.png");
+    //Rectangle (Music app)
+     sf::RectangleShape recMusicPlay;
+    recMusicPlay.setSize(sf::Vector2f(100,100));
+    recMusicPlay.setOutlineThickness(2);
+    recMusicPlay.setPosition(70,50);
+    recMusicPlay.setTexture(&playIcon);
+
+    //Texture (Music Stop icon)
+    sf::Texture stopIcon;
+    stopIcon.loadFromFile("image/stop.png");
+    //Rectangle (Music STOP app)
+     sf::RectangleShape recMusicStop;
+    recMusicStop.setSize(sf::Vector2f(50,50));
+    recMusicStop.setPosition(95,200);
+    recMusicStop.setTexture(&stopIcon);
+
+    name="music/"+name;
+
+//Code for playing MUSIC intro
+    sf::Music musicFile;
+    musicFile.openFromFile(name);
+    musicFile.setVolume(60);         // reduce the volume
+    musicFile.setLoop(true);         // make it loop
+
+    /*
+    introMusic.setPosition(0, 1, 10); // change its 3D position
+    introMusic.setPitch(2);           // increase the pitch
+    */
+
+    // Play it
+    musicFile.play();
+
+    // run the program as long as the window is open
+    while (window.isOpen())
+    {
+            //Mouse Position (Phone App)
+    sf::Vector2f recPos=recMusicStop.getPosition();
+    sf::Vector2i mousePos=sf::Mouse::getPosition(window);
+
+    if((mousePos.x>recPos.x && mousePos.x< recPos.x+50) && (mousePos.y>recPos.y && mousePos.y< recPos.y+50)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+        }
+    }
+        // check all the window ' s events that were triggered since the last iteration of the loop
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // "close requested" event: we close the window
+            if (event.type == sf::Event::Closed){
+                window.close();
+                }
+            window.draw(recMusicPlay);
+            window.draw(recMusicStop);
+            window.display();
+            window.clear(sf::Color::White);
+        }
+    }
+}
 
 void showPhoneScreen(){
     //load font
@@ -278,6 +365,22 @@ void showPhoneScreen(){
     googleText.setCharacterSize(15);
     googleText.setPosition(330,160);
 
+    //Texture (Dice)
+    sf::Texture  diceIcon;
+    diceIcon.loadFromFile("image/dice.png");
+    //RectangleShape (Dice)
+    sf::RectangleShape recDice;
+    recDice.setSize(sf::Vector2f(43,43));
+    recDice.setOutlineColor(sf::Color::Black);
+    recDice.setOutlineThickness(2);
+    recDice.setPosition(60,200);
+    recDice.setTexture(&diceIcon);
+    //Text
+    sf::Text diceText("Games",font);
+    diceText.setCharacterSize(15);
+    diceText.setPosition(60,240);
+
+
     //texture (Qwerty)
     sf::Texture qwerty;
     qwerty.loadFromFile("image/qwerty.png");
@@ -291,9 +394,78 @@ void showPhoneScreen(){
 
 sf::RenderWindow window(sf::VideoMode(400,600), "C++ Phone");
 
+    //Code for playing MUSIC intro
+    sf::Music introMusic;
+    introMusic.openFromFile("sound/intro.ogg");
+    introMusic.setVolume(60);         // reduce the volume
+
+    /*
+    introMusic.setPosition(0, 1, 10); // change its 3D position
+    introMusic.setPitch(2);           // increase the pitch
+    introMusic.setLoop(true);         // make it loop
+    */
+    // Play it
+    introMusic.play();
+
 //  GAME LOOP
     while (window.isOpen())
     {
+        //Mouse Position (Phone App)
+    sf::Vector2f recPos=recPhone.getPosition();
+    sf::Vector2i mousePos=sf::Mouse::getPosition(window);
+
+    if((mousePos.x>recPos.x && mousePos.x<recPos.x+45) && (mousePos.y>recPos.y && mousePos.y< recPos.y+45)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+            usePhoneApp();
+        }
+    }
+        //Mouse Position (Game App)
+    recPos=recDice.getPosition();
+
+    if((mousePos.x>recPos.x && mousePos.x< recPos.x+47) && (mousePos.y>recPos.y && mousePos.y< recPos.y+47)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+            useGameApp();
+        }
+    }
+       //Mouse Position (Calculator App)
+    recPos=recCal.getPosition();
+
+    if((mousePos.x>recPos.x && mousePos.x< recPos.x+43) && (mousePos.y >recPos.y && mousePos.y< recPos.y+43)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+            useCalculatorApp();
+        }
+    }
+        //Mouse Position (Text App)
+    recPos=recText.getPosition();
+
+    if((mousePos.x>recPos.x && mousePos.x< recPos.x+45) && (mousePos.y>recPos.y && mousePos.y< recPos.y+45)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+            useTextApp();
+        }
+    }
+
+    //Mouse Position (Contacts App)
+    recPos=recContact.getPosition();
+
+    if((mousePos.x>recPos.x && mousePos.x< recPos.x+45) && (mousePos.y>recPos.y && mousePos.y< recPos.y+45)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+            useContactsApp();
+        }
+    }
+
+    //Mouse Position (Music App)
+    recPos=recMusic.getPosition();
+    if((mousePos.x>recPos.x && mousePos.x< recPos.x+45) && (mousePos.y>recPos.y && mousePos.y< recPos.y+45)){
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            window.close();
+            useMusicApp();
+        }
+    }
 
         sf::Event event;
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
@@ -321,12 +493,52 @@ sf::RenderWindow window(sf::VideoMode(400,600), "C++ Phone");
         window.draw(recFb);
         window.draw(fbText);
         window.draw(recGoogle);
+        window.draw(recDice);
+        window.draw(diceText);
         window.draw(googleText);
         window.draw(rectangle);
         window.display();
         window.clear(sf::Color::Black);
     }
 }
+}
+
+string showDate(){
+        time_t now=time(0);
+        tm *ptm=localtime(&now);
+        int day=(ptm->tm_mday);
+        int month=(ptm->tm_mon)+1;
+        int year=1900+((ptm->tm_year));
+
+        stringstream c_day,c_month,c_year;
+        c_day<< day;
+        string d=c_day.str();
+        c_month<< month;
+        string m=c_month.str();
+        c_year<< year;
+        string y=c_year.str();
+
+        string startDate=m+"/"+d+"/"+y;
+        return startDate;
+}
+
+string showTime(){
+     time_t now=time(0);
+        tm *ptm=localtime(&now);
+        int hour=(ptm->tm_hour);
+        int mint=(ptm->tm_min);
+        int sec=(ptm->tm_sec);
+
+        stringstream c_hour,c_mint,c_sec;
+        c_hour<< hour;
+        string h=c_hour.str();
+        c_mint<< mint;
+        string m=c_mint.str();
+        c_sec<< sec;
+        string s=c_sec.str();
+
+       string startTime=h+":"+m+":"+s;
+        return startTime;
 }
 
 

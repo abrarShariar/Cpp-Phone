@@ -8,7 +8,6 @@
 #include "Methods.h"
 #include<dirent.h>
 
-
 Phone activePhone;
 Person alphaPerson;
 
