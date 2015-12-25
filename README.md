@@ -41,9 +41,13 @@ In the "Code" subfolder the following header files are found:
 
 -[RegisterPerson.h] (http://abrarshariar.github.io/cpp_phone_documentation/registerPerson.html)
 
--[SFML.h] (http://abrarshariar.github.io/cpp_phone_documentation/sfml.html)
+-[SFML.cpp] (http://abrarshariar.github.io/cpp_phone_documentation/sfml.html)
 
 -[SMS.h] (http://abrarshariar.github.io/cpp_phone_documentation/sms.html)
+
+-[App.h] (http://abrarshariar.github.io/cpp_phone_documentation/app.html)
+
+-[Dice.h] (http://abrarshariar.github.io/cpp_phone_documentation/dice.html)
 
 
 Besides C++ Standard Library is extensively used. For more on each files please see the documentation.
