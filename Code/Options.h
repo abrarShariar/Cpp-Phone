@@ -27,6 +27,7 @@ void useGameApp();
 //SFML function
 void showPhoneScreen();
 
+
 //select from pre-registered person
 Person selectPerson(){
     vector<Person>personList;
