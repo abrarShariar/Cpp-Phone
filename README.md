@@ -3,6 +3,8 @@ A console based Software which demostrates different features of a Phone.  Entir
 
 **How to run the software** : Open the subfolder Code, Run *main.exe* and PLAY !!
 
+In case of using the **Music** app please make sure you have added all your music files (.wav / .ogg format) in the music subfolder under Code directory
+
 Before running the software please read the [Documentation] (http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 
 Cpp-Phone
@@ -41,9 +43,13 @@ In the "Code" subfolder the following header files are found:
 
 -[RegisterPerson.h] (http://abrarshariar.github.io/cpp_phone_documentation/registerPerson.html)
 
--[SFML.h] (http://abrarshariar.github.io/cpp_phone_documentation/sfml.html)
+-[SFML.cpp] (http://abrarshariar.github.io/cpp_phone_documentation/sfml.html)
 
 -[SMS.h] (http://abrarshariar.github.io/cpp_phone_documentation/sms.html)
+
+-[App.h] (http://abrarshariar.github.io/cpp_phone_documentation/app.html)
+
+-[Dice.h] (http://abrarshariar.github.io/cpp_phone_documentation/dice.html)
 
 
 Besides C++ Standard Library is extensively used. For more on each files please see the documentation.
