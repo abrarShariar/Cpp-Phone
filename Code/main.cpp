@@ -1,5 +1,7 @@
 /*
     C++ Phone software
+    Author: Abrar Shariar
+    Email: shariarabrar@gmail.com
     the main function is included here
     Compile and run this file
 */
