@@ -251,12 +251,20 @@ void preRegister(){
     RegisterPerson::setRegisterPerson("Batman");
     RegisterPerson::setRegisterPerson("Mark Tyson");
     RegisterPerson::setRegisterPerson("Henry Ford");
-    RegisterPerson::setRegisterPerson("Rakib Hasan");
-    RegisterPerson::setRegisterPerson("Fahim Khan");
-    RegisterPerson::setRegisterPerson("Gilfoyle");
+    RegisterPerson::setRegisterPerson("John Lennon");
+    RegisterPerson::setRegisterPerson("Avril Lavigne");
+    RegisterPerson::setRegisterPerson("Tony Stark");
+    RegisterPerson::setRegisterPerson("Arya Stark");
     RegisterPerson::setRegisterPerson("Richard Hendricks");
     RegisterPerson::setRegisterPerson("Bruce Wayne");
     RegisterPerson::setRegisterPerson("Jon Snow");
+    RegisterPerson::setRegisterPerson("Megan Fox");
+    RegisterPerson::setRegisterPerson("Bill Gates");
+    RegisterPerson::setRegisterPerson("Superman");
+    RegisterPerson::setRegisterPerson("Micheal Jackson");
+    RegisterPerson::setRegisterPerson("Peter Parker");
+    RegisterPerson::setRegisterPerson("Beethoven");
+    RegisterPerson::setRegisterPerson("Sherlock");
 
     RegisterPerson::writeRegisterPerson();
 }

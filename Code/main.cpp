@@ -24,13 +24,16 @@ int main(){
         printf("\n\n");
         }
         system("cls");
-        printf("\n\t\tThank You for using C++ Phone !!\n\n");
+        printf("\n\n\t\tThank You for using C++ Phone !!\n\n\n");
 }
 void showBasicInst(){
     cout<<"\n** Please read the instructions carefully before running the software **\n"<<endl;
     cout<<"\n\t\t\t [ Basic Instructions ] "<<endl;
     cout<<"\n\t"<<"[1] : The Main Controller is the hub of this software. You can access various features using the Controller Options. \n"<<endl;
-    cout<<"\t"<<"[2] : In choosing the Controller Options the syntax as displayed must be followed. Case sensitivity matters.\n"<<endl;
-    cout<<"\t"<<"[3]: When accessing various Options you must follow a logical sequence. For more on good practices see the Documentation.\n"<<endl;
+    cout<<"\t"<<"[2]: To add new tracks to your [Playlist], the music files (.wav / .ogg) must be added in the music sub-folder \n"<<endl;
+    cout<<"\t"<<"[3] : In choosing the Controller Options the syntax as displayed must be followed. Case sensitivity matters.\n"<<endl;
+    cout<<"\t"<<"[4]: For more on operating the software see the Documentation.\n"<<endl;
+
+
 }
 
