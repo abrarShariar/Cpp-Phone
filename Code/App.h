@@ -1,5 +1,6 @@
 /*
     This file contains the necessary functions to execute the usage of the apps
+    this functions are executed when any app is activated
 */
 
 //Use Contacts App (call from SFML.cpp)
