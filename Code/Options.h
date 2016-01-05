@@ -22,6 +22,7 @@ void registerPerson();
 void useContactsApp();
 void useCalculatorApp();
 void useGameApp();
+void useMusicApp();
 
 //SFML function
 void showPhoneScreen();
@@ -183,7 +184,6 @@ void chooseApp(){
 void useGameApp(){
     system("cls");
     playDice();
-
 }
 
 void useCalculatorApp(){
@@ -374,8 +374,9 @@ void useMusicApp(){
     cout<<"\n\n";
     cout<<"\t\t[My Playlist]\n\n";
 
-    //Code for displaying
-     const char *location="E:\\2nd_semester\\C++\\C++Phone\\Code\\music";
+    //Code for displaying available music
+    //path where music files are located. In this case the "music" folder contains all the music files
+     const char *location="\music";
 
     DIR *dir;
     struct dirent *ent;
@@ -383,11 +384,17 @@ void useMusicApp(){
     /* print all the files and directories within directory */
     int index=1;
     int i=0;
+    string extension;
     while ((ent = readdir (dir)) != NULL) {
         if(i!=0 && i!=1){
-            printf ("\t\t[%d] %s\n",index,ent->d_name);
-            musicMap[index]=ent->d_name;
-            index++;
+            string check=ent->d_name;
+            size_t dotIndex=check.find_first_of(".");
+            extension=check.substr(dotIndex+1,3);
+            if(extension=="wav" || extension=="ogg" || extension=="flac" || extension=="aiff" || extension=="au" || extension=="raw"){   //supported file formats
+                    printf ("\t\t[%d] %s\n",index,ent->d_name);
+                    musicMap[index]=ent->d_name;
+                    index++;
+            }
         }
         i++;
     }

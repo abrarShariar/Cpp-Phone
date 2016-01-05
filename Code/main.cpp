@@ -1,11 +1,12 @@
 /*
-    Beta 2.0 December 2015
+    Beta 2.0 released December 2015
     C++ Phone software
     Author: Abrar Shariar
     Email: shariarabrar@gmail.com
     the main function is included here
     Compile and run this file
 */
+
 #include "Options.h"
 
 void showBasicInst();
