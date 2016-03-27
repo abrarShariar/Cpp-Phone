@@ -1,6 +1,9 @@
 # [Cpp-Phone](http://abrarshariar.github.io/cpp_phone_documentation/index.html)
 A console based Software which demostrates different features of a Phone.  Entirely coded in C++. The Graphical inteface is built on SFML. 
 
+###Preview
+![App preview](https://raw.githubusercontent.com/abrarShariar/Cpp-Phone/master/Capture-min.PNG)
+
 **How to run the software** : Open the subfolder App, Run *START.exe* and PLAY !!
 
 In case of using the **Music** app please make sure you have added all your music files (.wav / .ogg format) in the music subfolder under Code directory
